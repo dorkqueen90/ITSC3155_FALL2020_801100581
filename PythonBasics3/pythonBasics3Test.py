@@ -17,7 +17,7 @@ def test(got, expected):
 def main():
     # set which functions to test
     starts_with_number = True
-    starts_with_consonant = False
+    starts_with_consonant = True
     binary_multiple_of_4 = False
 
     if starts_with_number:

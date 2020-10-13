@@ -28,8 +28,13 @@ def starts_with_number(s):
 # Note: Be sure to use RegEx and it works for both upper and lower case and for nonletters!
 def starts_with_consonant(s):
   # YOUR CODE HERE
-
-  return
+  #if (s) starts with constant, return true
+  x = re.search("^[b-zB-Z]", s)
+  y = re.search("^[^aeiouAEIOU]", s)
+  if x and y:
+     return True
+  else:
+     return False
 
 
 # Part C. binary_multiple_of_4
