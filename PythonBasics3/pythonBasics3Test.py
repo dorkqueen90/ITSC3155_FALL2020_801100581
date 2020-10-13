@@ -18,7 +18,7 @@ def main():
     # set which functions to test
     starts_with_number = True
     starts_with_consonant = True
-    binary_multiple_of_4 = False
+    binary_multiple_of_4 = True
 
     if starts_with_number:
         print('starts_with_number')
