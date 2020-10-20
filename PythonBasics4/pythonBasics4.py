@@ -5,10 +5,12 @@
 # which is just a placeholder for your code.
 
 # # Part A.
-def array_2_dict(emails, contacts):
-    # YOUR CODE HERE
+def array_2_dict(emails, contacts): #takes in array of emails, dictionary contacts
+    # return the contacts dictionary with emails populated from the array
+    for i in range(0, len(emails)):
+       contacts[list(contacts.keys())[i]] = emails[i]
 
-    return
+    return contacts;
 
 # # Part B.
 def array2d_2_dict(contact_info, contacts):
