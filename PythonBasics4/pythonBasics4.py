@@ -13,10 +13,22 @@ def array_2_dict(emails, contacts): #takes in array of emails, dictionary contac
     return contacts;
 
 # # Part B.
-def array2d_2_dict(contact_info, contacts):
-    # YOUR CODE HERE
+def array2d_2_dict(contact_info, contacts): #contact info: 2D arr of emails & phone nums. contacts: dict for contacts 
+    # return the contacts dictionary with the email address and phone number dictionary populated for each contact
+    if not contact_info:
+      return contacts
+    else:
+      if not contact_info[0]:
+        return contacts
+      else:
+        for i in range(0, len(contact_info)):
+          innerDict = {
+           "email": contact_info[i][0],
+           "phone": contact_info[i][1]
+          }
+          contacts[list(contacts.keys())[i]] =  innerDict;
 
-    return
+    return contacts;
 
 # # Part C.
 def dict_2_array(contacts):
