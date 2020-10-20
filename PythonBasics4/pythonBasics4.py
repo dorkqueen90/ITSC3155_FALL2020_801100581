@@ -32,7 +32,20 @@ def array2d_2_dict(contact_info, contacts): #contact info: 2D arr of emails & ph
 
 # # Part C.
 def dict_2_array(contacts):
-    # YOUR CODE HERE
+   # create three arrays of type string from the dictionary
+    # return an array that contains these three arrays (a three dimensional array!)
+   emails = []
+   phones = []
+   names = []
+   for nameInDict, info in contacts.items():
+    names.append(nameInDict);
+    emails.append(info["email"]);
+    phones.append(info["phone"]);
 
-    return
+   arr = [];
+   arr.append(emails);
+   arr.append(phones);
+   arr.append(names);
+
+   return arr;
 
