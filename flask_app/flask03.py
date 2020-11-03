@@ -34,6 +34,11 @@ def get_note(note_id):
     
     return render_template('note.html', note=notes[int(note_id)])
 
+@app.route('/notes/new')
+def new_note():
+    a_user = {'name': 'Amber', 'email': 'asibel@uncc.edu'}
+    return render_template('new.html', user=a_user)
+
 app.run(host=os.getenv('IP', '127.0.0.1'),port=int(os.getenv('PORT', 5000)),debug=True)
 
 # To see the web page in your web browser, go to the url,
