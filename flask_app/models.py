@@ -1,5 +1,6 @@
 from database import db
 
+
 class Note(db.Model):
     id = db.Column("id", db.Integer, primary_key=True)
     title = db.Column("title", db.String(200))
@@ -13,9 +14,9 @@ class Note(db.Model):
         
 class User(db.Model):
     id = db.Column("id", db.Integer, primary_key=True)
-    name = db.Column("title", db.String(100))
-    email = db.Column("title", db.String(100))
+    name = db.Column("name", db.String(100))
+    email = db.Column("email", db.String(100))
     
     def __init__(self, name, email):
         self.name = name
-        self.emmail = email
+        self.email = email
