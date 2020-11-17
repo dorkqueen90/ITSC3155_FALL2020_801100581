@@ -68,6 +68,17 @@ def new_note():
         
         return render_template('new.html', user=a_user)
 
+@app.route('/notes/edit/<note_id>')
+def update_note(note_id):
+    #GET request - show new note form to edit note
+    #retrieve user from database
+    a_user = db.session.query(User).filter_by(email='asibel@uncc.edu').one()
+    
+    #retrieve note from database
+    my_note = db.session.query(Note).filter_by(id=note_id).one()
+    
+    return render_template('new.html', note=my_note, user=a_user)
+
 app.run(host=os.getenv('IP', '127.0.0.1'),port=int(os.getenv('PORT', 5000)),debug=True)
 
 # To see the web page in your web browser, go to the url,
