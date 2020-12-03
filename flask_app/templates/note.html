@@ -7,6 +7,7 @@
         <title>UNCC Notes App - View your Note</title>
         <!-- styles -->
         <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='forms.css') }}">
     </head>
     <body>
 		<nav>
@@ -32,5 +33,25 @@
                 <td>{{ note.date }}</td>
             </tr>
         </table>
+        <br><br>
+        {% if note.comments %}
+        {% if note.comments|length > 0 %}
+        <h2>Comments</h2>
+        <ul>
+            {% for comment in note.comments %}
+            <li>{{ comment.content }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endif %}
+        <form action="{{ url_for('new_comment', note_id=note.id) }}" method="post">
+            <div class="formwrapper">
+                <h2 class="title">Add a comment</h2>
+                <div class="form-field">
+                    {{ form.comment.label }} <br/> {{ form.comment }}
+                </div>
+                {{ form.submit }}
+            </div>
+        </form>
     </body>
 </html>
